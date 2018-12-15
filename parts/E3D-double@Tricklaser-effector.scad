@@ -173,9 +173,11 @@ module aqua_holder()
         
         translate([base_r,0,-less])
             cylinder(d= base_mount_d, h= holder_h+2*less, $fn= fnl);
+        
+        translate([base_r, 0, holder_h/2+aqua_mount_z/2]) rotate([90,0,0])
+            cylinder(d= base_mount_d, h= aqua_mount_xy, center= true);
+
     }
 }
 
-
-//% rotate(180) aqua_radiator();
 translate([0,0,aqua_h]) rotate([180,0,0]) aqua_holder();
